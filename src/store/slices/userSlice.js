@@ -11,7 +11,10 @@ const user = createSlice({
     reducers:{
         setSignedIn(state, action){
             state.isSignedIn = action.payload;
-            localStorage.setItem('isSignedIn', JSON.stringify(action.payload));          
+            localStorage.setItem('isSignedIn', JSON.stringify(action.payload)); 
+            action.payload || 
+                localStorage.setItem('email', null); 
+                localStorage.setItem('password', null);     
         },
         setUser(state, action){
             state.email = action.payload.email;

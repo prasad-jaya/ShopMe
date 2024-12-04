@@ -15,7 +15,6 @@ const memoizedProducts = createSelector(
 
 const ProductItem = () =>{
     const dispatch = useDispatch();
-
     const products = useSelector(memoizedProducts); 
     
     const handleAddtoCart = (product) =>{
